@@ -147,8 +147,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deckCards:
-  - {fileID: 713509321536365624, guid: 6767f6b9c122c5d40b6f37c61ad17f15, type: 3}
-  - {fileID: 8208565149263160847, guid: dd2f545612b96994c9c29a74c453ded1, type: 3}
-  - {fileID: 8914433471839480800, guid: d6c125b2f8c4843468370517477e9c2c, type: 3}
-  - {fileID: 8336823964004355831, guid: 78360bd0683ffdd48a2690b5e2a31792, type: 3}
-  - {fileID: 8717013664498906037, guid: 00e21a421154db64db5645ab6e3fc9f1, type: 3}
+  - {fileID: 6059362334511150561, guid: 6767f6b9c122c5d40b6f37c61ad17f15, type: 3}
+  - {fileID: 6059362334511150561, guid: 46f7a76ee206ba747928f49b3096e829, type: 3}
+  - {fileID: 6059362334511150561, guid: 806425bef9e77cd4184b17a4184ca4e6, type: 3}
+  - {fileID: 6059362334511150561, guid: ef663c2d3e30a0b40b602ce1df4a123e, type: 3}
+  - {fileID: 6059362334511150561, guid: fda191618d38e3f448c2abec8272ab45, type: 3}
+  cardUI: {fileID: 0}

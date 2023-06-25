@@ -1,14 +1,28 @@
- using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 //[CreateAssetMenu(menuName = "Card")]
 public class Card : MonoBehaviour
 {
-    [SerializeField] private int power;
-    [SerializeField] private int entertainment;
-    [SerializeField] private int accuracy = 100;
-    [SerializeField] private int cost;
+    public int power;
+    public int entertainment;
+    public int accuracy = 100;
+    public int cost;
+
+    public TextMeshProUGUI powerText;
+    public TextMeshProUGUI accuracyText;
+    public TextMeshProUGUI entertainmentText;
+    public TextMeshProUGUI staminaCostText;
+
+    public virtual void PlayCard()
+    {
+        Character user = Game.Instance.activeCharacter;
+        Character target = Game.Instance.targetCharacter;
+
+        PlayCard(user, target);
+    }
 
     public virtual void PlayCard(Character user, Character target)
     {

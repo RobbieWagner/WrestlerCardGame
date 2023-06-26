@@ -13,16 +13,19 @@ public class Deck : MonoBehaviour
         discardPile = new List<Card>();
     }
 
-    public void DrawCards(int cardAmount)
+    public Card[] DrawCards(int cardAmount)
     {
         if(cardAmount > deckCards.Count) RefreshDeck();
+        Card[] hand = new Card[cardAmount];
         for(int i = 0; i < cardAmount; i++)
         {
             Card cardToDisplay = deckCards[0];
-            if(cardUI != null) cardUI.DisplayCard(cardToDisplay);
+            hand[i] = cardToDisplay;
+            //if(cardUI != null) cardUI.DisplayCard(cardToDisplay);
             discardPile.Add(cardToDisplay);
             deckCards.Remove(cardToDisplay);
         }
+        return hand;
     }
 
     public void RefreshDeck()
@@ -35,7 +38,9 @@ public class Deck : MonoBehaviour
         ShuffleCardDeck(deckCards);
     }
 
-    private List<Card> ShuffleCardDeck(List<Card> deck)
+    public List<Card> ShuffleCardDeck(){return ShuffleCardDeck(deckCards);}
+
+    public List<Card> ShuffleCardDeck(List<Card> deck)
     {
         int i = deck.Count;
         while(i > 1)

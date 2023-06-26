@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Turn
+{
+    player,
+    enemy
+}
+
 public class Game : MonoBehaviour
 {
 
@@ -19,7 +25,9 @@ public class Game : MonoBehaviour
     [HideInInspector] public Character targetCharacter;
 
     [SerializeField] private CardUI cardUI;
-    [SerializeField] private int handSize;
+    public int handSize;
+
+    int currentTurn;
 
     public static Game Instance { get; private set; }
 
@@ -27,6 +35,7 @@ public class Game : MonoBehaviour
     {
         StartGame();
     }
+
     private void Awake() 
     { 
         if (Instance != null && Instance != this) 
@@ -49,6 +58,7 @@ public class Game : MonoBehaviour
         characters[0].ResetStats();
         characterUIs[0].SetCharacter(characters[0]);
         characterGOs[0].transform.position = playerStartPosition;
+        characters[0].characterDeck.ShuffleCardDeck();
 
         characters[0].characterDeck.cardUI = cardUI;
 
@@ -57,13 +67,16 @@ public class Game : MonoBehaviour
         characters[1].ResetStats();
         characterUIs[1].SetCharacter(characters[1]);
         characterGOs[1].transform.position = enemyStartPosition;
+        characters[1].characterDeck.ShuffleCardDeck();
 
+        currentTurn = (int) Turn.player;
         TakePlayerTurn();
     }
 
     private void TakePlayerTurn()
     {
-        characters[0].characterDeck.DrawCards(handSize);
+        Card[] hand = characters[0].characterDeck.DrawCards(handSize);
+        foreach(Card card in hand) cardUI.DisplayCard(card);
 
         activeCharacter = characters[0];
         targetCharacter = characters[1];
@@ -73,6 +86,24 @@ public class Game : MonoBehaviour
     {
         activeCharacter = characters[1];
         targetCharacter = characters[0];
+
+        characters[1].characterDeck.ShuffleCardDeck();
+        characters[1].characterDeck.deckCards[0].PlayCard();
+    }
+
+    public void SwapTurns()
+    {
+        if(currentTurn == (int) Turn.player)
+        {
+            cardUI.RemoveCards();
+            currentTurn = (int) Turn.enemy;
+            TakeEnemyTurn();
+        }
+        else
+        {
+            currentTurn = (int) Turn.player;
+            TakePlayerTurn();
+        }
     }
 
     public void EndGame()

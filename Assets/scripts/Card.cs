@@ -22,6 +22,8 @@ public class Card : MonoBehaviour
         Character target = Game.Instance.targetCharacter;
 
         PlayCard(user, target);
+
+        Game.Instance.SwapTurns();
     }
 
     public virtual void PlayCard(Character user, Character target)

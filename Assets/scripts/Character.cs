@@ -33,9 +33,10 @@ public class Character : MonoBehaviour
     public float Fame
     {
         get {return fame;}
-        set {fame = value;
-             if(OnFameChange != null) OnFameChange();
-             Debug.Log("fame");}
+        set {
+                fame = value;
+                if(OnFameChange != null) OnFameChange();
+            }
     }
 
     public delegate void OnHealthChangeDelegate();

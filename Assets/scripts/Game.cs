@@ -55,7 +55,6 @@ public class Game : MonoBehaviour
 
         characterGOs[0] = Instantiate(characterPrefabs[0]);
         characters[0] = characterGOs[0].GetComponent<Character>();
-        characters[0].ResetStats();
         characterUIs[0].SetCharacter(characters[0]);
         characterGOs[0].transform.position = playerStartPosition;
         characters[0].characterDeck.ShuffleCardDeck();
@@ -64,7 +63,6 @@ public class Game : MonoBehaviour
 
         characterGOs[1] = Instantiate(characterPrefabs[1]);
         characters[1] = characterGOs[1].GetComponent<Character>();
-        characters[1].ResetStats();
         characterUIs[1].SetCharacter(characters[1]);
         characterGOs[1].transform.position = enemyStartPosition;
         characters[1].characterDeck.ShuffleCardDeck();

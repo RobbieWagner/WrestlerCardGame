@@ -17,9 +17,10 @@ public class CardUI : MonoBehaviour
 
     public void DisplayCard(Card card)
     {
-        cardGOs.Add(Instantiate(card.gameObject, parentObject.transform));
+        Card displayCard = Instantiate(card.gameObject, parentObject.transform).GetComponent<Card>();
+        cardGOs.Add(displayCard.gameObject);
         
-        DisplayCardInformation(card);
+        DisplayCardInformation(displayCard);
     }
 
     private void DisplayCardInformation(Card card)

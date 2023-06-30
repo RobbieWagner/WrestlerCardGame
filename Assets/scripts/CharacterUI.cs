@@ -30,5 +30,6 @@ public class CharacterUI : MonoBehaviour
 
     private void EditStaminaBar(){staminaBar.value = associatedCharacter.CurrentStamina;}
 
-    private void EditFameBar(){fameBar.value = associatedCharacter.Fame;}
+    private void EditFameBar(){
+        Debug.Log("fame bar");fameBar.value = associatedCharacter.Fame;}
 }

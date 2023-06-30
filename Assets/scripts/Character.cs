@@ -34,7 +34,8 @@ public class Character : MonoBehaviour
     {
         get {return fame;}
         set {fame = value;
-             if(OnFameChange != null) OnFameChange();}
+             if(OnFameChange != null) OnFameChange();
+             Debug.Log("fame");}
     }
 
     public delegate void OnHealthChangeDelegate();
@@ -49,14 +50,13 @@ public class Character : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        Fame = 0;
         ResetStats();
     }
 
     public void ResetStats()
     {
-        currentHealth = maxHealth;
-        currentStamina = maxStamina;
+        CurrentHealth = maxHealth;
+        CurrentStamina = maxStamina;
         Fame = 0;
     }
 }

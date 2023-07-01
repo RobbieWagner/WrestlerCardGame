@@ -25,6 +25,8 @@ public class CardUI : MonoBehaviour
 
     private void DisplayCardInformation(Card card)
     {
+        card.titleText.text = card.cardTitle; 
+
         card.powerText.text = card.power.ToString();
         card.accuracyText.text = card.accuracy.ToString();
         card.entertainmentText.text = card.entertainment.ToString();

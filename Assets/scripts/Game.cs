@@ -29,6 +29,8 @@ public class Game : MonoBehaviour
 
     int currentTurn;
 
+    [SerializeField] private Card defaultCard;
+
     public static Game Instance { get; private set; }
 
     private void Start()
@@ -73,7 +75,8 @@ public class Game : MonoBehaviour
 
     private void TakePlayerTurn()
     {
-        Card[] hand = characters[0].characterDeck.DrawCards(handSize);
+        List<Card> hand = characters[0].characterDeck.DrawCards(handSize);
+        hand.Add(defaultCard);
         foreach(Card card in hand) cardUI.DisplayCard(card);
 
         activeCharacter = characters[0];

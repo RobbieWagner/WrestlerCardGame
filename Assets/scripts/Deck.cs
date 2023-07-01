@@ -13,14 +13,14 @@ public class Deck : MonoBehaviour
         discardPile = new List<Card>();
     }
 
-    public Card[] DrawCards(int cardAmount)
+    public List<Card> DrawCards(int cardAmount)
     {
         if(cardAmount > deckCards.Count) RefreshDeck();
-        Card[] hand = new Card[cardAmount];
+        List<Card> hand = new List<Card>();
         for(int i = 0; i < cardAmount; i++)
         {
             Card cardToDisplay = deckCards[0];
-            hand[i] = cardToDisplay;
+            hand.Add(cardToDisplay);
             //if(cardUI != null) cardUI.DisplayCard(cardToDisplay);
             discardPile.Add(cardToDisplay);
             deckCards.Remove(cardToDisplay);

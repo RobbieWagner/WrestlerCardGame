@@ -6,10 +6,15 @@ using TMPro;
 //[CreateAssetMenu(menuName = "Card")]
 public class Card : MonoBehaviour
 {
+
+    public string cardTitle;
+
     public int power;
     public int entertainment;
     public int accuracy = 100;
     public int cost;
+
+    public TextMeshProUGUI titleText;
 
     public TextMeshProUGUI powerText;
     public TextMeshProUGUI accuracyText;

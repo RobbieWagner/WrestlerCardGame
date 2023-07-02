@@ -31,24 +31,11 @@ public class Character : MonoBehaviour
              if(OnStaminaChange != null) OnStaminaChange();}
     }
 
-    [SerializeField] private float fame;
-    public float Fame
-    {
-        get {return fame;}
-        set {
-                fame = value;
-                if(OnFameChange != null) OnFameChange();
-            }
-    }
-
     public delegate void OnHealthChangeDelegate();
     public event OnHealthChangeDelegate OnHealthChange;
 
     public delegate void OnStaminaChangeDelegate();
     public event OnStaminaChangeDelegate OnStaminaChange;
-
-    public delegate void OnFameChangeDelegate();
-    public event OnFameChangeDelegate OnFameChange;
 
     // Start is called before the first frame update
     private void Start()
@@ -60,7 +47,6 @@ public class Character : MonoBehaviour
     {
         CurrentHealth = maxHealth;
         CurrentStamina = maxStamina;
-        Fame = 0;
 
         canAct = true;
     }

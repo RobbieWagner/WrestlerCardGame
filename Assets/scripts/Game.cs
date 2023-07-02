@@ -10,9 +10,6 @@ public enum Turn
 
 public class Game : MonoBehaviour
 {
-
-    public int fameNeededForWin;
-
     [SerializeField] private CharacterUI[] characterUIs;
     [SerializeField] private GameObject[] characterPrefabs;
     private GameObject[] characterGOs;
@@ -103,8 +100,8 @@ public class Game : MonoBehaviour
         cardUI.RemoveCards();
 
         //Check for end game conditions
-        if(characters[1].Fame >= fameNeededForWin || characters[0].CurrentHealth == 0) EndGame(false);
-        else if(characters[0].Fame >= fameNeededForWin || characters[1].CurrentHealth == 0) EndGame(true);
+        if(FameBar.Instance.Fame == 0 || characters[0].CurrentHealth == 0) EndGame(false);
+        else if(FameBar.Instance.Fame == FameBar.Instance.fameNeededForWin || characters[1].CurrentHealth == 0) EndGame(true);
 
         //have the correct character take their turn
         else if(currentTurn == (int) Turn.player)
@@ -140,5 +137,18 @@ public class Game : MonoBehaviour
         characters[1].characterDeck.deckCards[0].PlayCard();
 
         StopCoroutine(EnemyTurnCoroutine());
+    }
+
+    //changes the fame value of the battle. If called during the enemies turn, lowers the value. If called during the player's turn, raises the value
+    public void ChangeFameBar(int value)
+    {
+        if(currentTurn == (int)Turn.enemy)
+        {
+            FameBar.Instance.Fame -= value;
+        }
+        else
+        {
+            FameBar.Instance.Fame += value;
+        }
     }
 }

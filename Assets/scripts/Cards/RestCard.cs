@@ -6,6 +6,7 @@ public class RestCard : Card
 {
     public override void PlayCard(Character user, Character target)
     {
-        user.CurrentStamina += user.maxStamina/2;
+        user.CurrentStamina = user.maxStamina;
+        user.CurrentHealth += user.maxHealth/10;
     }
 }

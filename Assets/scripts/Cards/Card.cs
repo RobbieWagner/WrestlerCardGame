@@ -59,10 +59,7 @@ public class Card : MonoBehaviour
         {
             target.CurrentHealth -= power;
 
-            int addedUserFame = (int) UnityEngine.Random.Range(entertainment/2, entertainment);
-            int removedTargetFame = entertainment - addedUserFame;
-            user.Fame += addedUserFame;
-            target.Fame -= removedTargetFame;
+            Game.Instance.ChangeFameBar(entertainment);
         }
     }
 }

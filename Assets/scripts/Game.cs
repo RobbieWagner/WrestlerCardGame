@@ -85,11 +85,7 @@ public class Game : MonoBehaviour
 
     private void TakeEnemyTurn()
     {
-        activeCharacter = characters[1];
-        targetCharacter = characters[0];
-
-        characters[1].characterDeck.ShuffleCardDeck();
-        characters[1].characterDeck.deckCards[0].PlayCard();
+        StartCoroutine(EnemyTurnCoroutine());
     }
 
     public void SwapTurns()
@@ -110,5 +106,18 @@ public class Game : MonoBehaviour
     public void EndGame()
     {
         
+    }
+
+    private IEnumerator EnemyTurnCoroutine()
+    {
+        yield return new WaitForSeconds(1f);
+
+        activeCharacter = characters[1];
+        targetCharacter = characters[0];
+
+        characters[1].characterDeck.ShuffleCardDeck();
+        characters[1].characterDeck.deckCards[0].PlayCard();
+
+        StopCoroutine(EnemyTurnCoroutine());
     }
 }

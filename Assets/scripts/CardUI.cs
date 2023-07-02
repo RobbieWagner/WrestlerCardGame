@@ -10,15 +10,31 @@ public class CardUI : MonoBehaviour
     [SerializeField] private GameObject parentObject;
     private List<GameObject> cardGOs;
 
+    [SerializeField] private float cardMinXPosition;
+    [SerializeField] private float cardMaxXPosition;
+    [SerializeField] private float cardYPosition;
+
+    public static CardUI Instance { get; private set; }
+
     private void Awake()
     {
         cardGOs = new List<GameObject>();
+
+        if (Instance != null && Instance != this) 
+        { 
+            Destroy(this); 
+        } 
+        else 
+        { 
+            Instance = this; 
+        } 
     }
 
     public void DisplayCard(Card card)
     {
         Card displayCard = Instantiate(card.gameObject, parentObject.transform).GetComponent<Card>();
         cardGOs.Add(displayCard.gameObject);
+        UpdateHand();
         
         DisplayCardInformation(displayCard);
     }
@@ -39,6 +55,18 @@ public class CardUI : MonoBehaviour
         {
             Destroy(cardGOs[0]);
             cardGOs.RemoveAt(0);
+        }
+    }
+
+    private void UpdateHand()
+    {
+        float spacing = (cardMaxXPosition - cardMinXPosition)/(cardGOs.Count-1);
+
+        for(int i = 0; i < cardGOs.Count; i++)
+        {
+            RectTransform rectTransform = cardGOs[i].GetComponent<RectTransform>();
+
+            rectTransform.anchoredPosition = new Vector2(cardMinXPosition + spacing * i, cardYPosition);
         }
     }
 }

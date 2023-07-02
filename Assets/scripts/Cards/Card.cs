@@ -38,15 +38,17 @@ public class Card : MonoBehaviour
         {
             int staminaRemoved = user.CurrentStamina;
             int healthRemoved = (cost - staminaRemoved)/2;
+            user.CurrentStamina = 0;
             if(user.CurrentHealth - healthRemoved > 0)
             {
-                user.CurrentStamina = 0;
                 user.CurrentHealth -= healthRemoved;
             }
             else
             {
-                return;
+                user.CurrentHealth = 1;
             }
+
+            user.canAct = false;
         }
         AttackUnit(user, target);
     }
@@ -57,7 +59,7 @@ public class Card : MonoBehaviour
         {
             target.CurrentHealth -= power;
 
-            int addedUserFame = (int) UnityEngine.Random.Range(0, entertainment);
+            int addedUserFame = (int) UnityEngine.Random.Range(entertainment/2, entertainment);
             int removedTargetFame = entertainment - addedUserFame;
             user.Fame += addedUserFame;
             target.Fame -= removedTargetFame;

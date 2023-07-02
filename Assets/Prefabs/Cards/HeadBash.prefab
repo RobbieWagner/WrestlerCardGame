@@ -196,8 +196,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6059362334511150561, guid: 5d19b7b159d44de4f8fd62615e8f5fab, type: 3}
+      propertyPath: cost
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6059362334511150561, guid: 5d19b7b159d44de4f8fd62615e8f5fab, type: 3}
+      propertyPath: power
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6059362334511150561, guid: 5d19b7b159d44de4f8fd62615e8f5fab, type: 3}
+      propertyPath: accuracy
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6059362334511150561, guid: 5d19b7b159d44de4f8fd62615e8f5fab, type: 3}
       propertyPath: cardTitle
       value: Head Bash
+      objectReference: {fileID: 0}
+    - target: {fileID: 6059362334511150561, guid: 5d19b7b159d44de4f8fd62615e8f5fab, type: 3}
+      propertyPath: entertainment
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6059362334511150563, guid: 5d19b7b159d44de4f8fd62615e8f5fab, type: 3}
       propertyPath: m_Name

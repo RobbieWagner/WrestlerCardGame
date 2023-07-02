@@ -196,6 +196,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6059362334511150561, guid: 5d19b7b159d44de4f8fd62615e8f5fab, type: 3}
+      propertyPath: cost
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6059362334511150561, guid: 5d19b7b159d44de4f8fd62615e8f5fab, type: 3}
+      propertyPath: power
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6059362334511150561, guid: 5d19b7b159d44de4f8fd62615e8f5fab, type: 3}
+      propertyPath: accuracy
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6059362334511150561, guid: 5d19b7b159d44de4f8fd62615e8f5fab, type: 3}
       propertyPath: cardTitle
       value: Leg Kick
       objectReference: {fileID: 0}

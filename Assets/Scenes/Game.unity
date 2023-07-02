@@ -549,7 +549,7 @@ MonoBehaviour:
   targetCharacter: {fileID: 0}
   cardUI: {fileID: 1881973545}
   handSize: 3
-  defaultCard: {fileID: 1168947544023997767, guid: f95ed457fe0135445a2d50431cae0288, type: 3}
+  defaultCard: {fileID: 1150031225575158203, guid: f95ed457fe0135445a2d50431cae0288, type: 3}
 --- !u!4 &1027742225
 Transform:
   m_ObjectHideFlags: 0
@@ -1396,6 +1396,26 @@ PrefabInstance:
       propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2480575061559690859, guid: 1b44788a44fae2f4db1d096ed55f6c31, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480575061559690859, guid: 1b44788a44fae2f4db1d096ed55f6c31, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480575061559690859, guid: 1b44788a44fae2f4db1d096ed55f6c31, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2480575062541979264}
+    - target: {fileID: 2480575061559690859, guid: 1b44788a44fae2f4db1d096ed55f6c31, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480575061559690859, guid: 1b44788a44fae2f4db1d096ed55f6c31, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2480575061733181353, guid: 1b44788a44fae2f4db1d096ed55f6c31, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1414,6 +1434,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b44788a44fae2f4db1d096ed55f6c31, type: 3}
+--- !u!1 &2480575062541979264 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2480575061559690861, guid: 1b44788a44fae2f4db1d096ed55f6c31, type: 3}
+  m_PrefabInstance: {fileID: 2480575062541979263}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4943220994449804659
 PrefabInstance:
   m_ObjectHideFlags: 0

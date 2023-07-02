@@ -75,6 +75,8 @@ public class Game : MonoBehaviour
 
     private void TakePlayerTurn()
     {
+        Debug.Log("player");
+        characters[0].CurrentStamina += characters[0].maxStamina/4;
         List<Card> hand = characters[0].characterDeck.DrawCards(handSize);
         hand.Add(defaultCard);
         foreach(Card card in hand) cardUI.DisplayCard(card);
@@ -85,32 +87,51 @@ public class Game : MonoBehaviour
 
     private void TakeEnemyTurn()
     {
+        Debug.Log("enemy");
         StartCoroutine(EnemyTurnCoroutine());
+    }
+
+    private void RestCharacter(Character character)
+    {
+        character.CurrentStamina += character.maxStamina/2;
+        character.canAct = true;
+        SwapTurns();
     }
 
     public void SwapTurns()
     {
-        if(currentTurn == (int) Turn.player)
+        cardUI.RemoveCards();
+
+        //Check for end game conditions
+        if(characters[1].Fame >= fameNeededForWin || characters[0].CurrentHealth == 0) EndGame(false);
+        else if(characters[0].Fame >= fameNeededForWin || characters[1].CurrentHealth == 0) EndGame(true);
+
+        //have the correct character take their turn
+        else if(currentTurn == (int) Turn.player)
         {
-            cardUI.RemoveCards();
             currentTurn = (int) Turn.enemy;
-            TakeEnemyTurn();
+            if(characters[1].canAct)TakeEnemyTurn();
+            else RestCharacter(characters[1]);
         }
         else
         {
             currentTurn = (int) Turn.player;
-            TakePlayerTurn();
+            if(characters[0].canAct)TakePlayerTurn();
+            else RestCharacter(characters[0]);
         }
     }
 
-    public void EndGame()
+    public void EndGame(bool win)
     {
-        
+        if(win)Debug.Log("win");
+        else Debug.Log("lose");
     }
 
     private IEnumerator EnemyTurnCoroutine()
     {
         yield return new WaitForSeconds(1f);
+
+        characters[1].CurrentStamina += characters[1].maxStamina/4;
 
         activeCharacter = characters[1];
         targetCharacter = characters[0];

@@ -7,6 +7,8 @@ public class Character : MonoBehaviour
 
     public Deck characterDeck;
 
+    [HideInInspector] public bool canAct;
+
     public int maxHealth;
     private int currentHealth;
     public int CurrentHealth
@@ -59,5 +61,7 @@ public class Character : MonoBehaviour
         CurrentHealth = maxHealth;
         CurrentStamina = maxStamina;
         Fame = 0;
+
+        canAct = true;
     }
 }

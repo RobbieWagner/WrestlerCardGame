@@ -599,7 +599,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 28, y: 50}
+  m_SizeDelta: {x: 31, y: 50}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &6059362333244590324
 CanvasRenderer:
@@ -629,9 +629,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '0
-
-'
+  m_text: 100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f04ecb54874a654aa2db8006062e225, type: 2}
   m_sharedMaterial: {fileID: 4285210575365380687, guid: 8f04ecb54874a654aa2db8006062e225, type: 2}
@@ -1229,7 +1227,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardAnimator: {fileID: 6832429474687368753}
-  playerInput: {fileID: 0}
 --- !u!1 &6136035576733238113
 GameObject:
   m_ObjectHideFlags: 0

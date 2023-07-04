@@ -61,6 +61,7 @@ public class Game : MonoBehaviour
         characters[0].characterDeck.cardUI = cardUI;
 
         characterGOs[1] = Instantiate(characterPrefabs[1]);
+        characterGOs[1].GetComponent<SpriteRenderer>().flipX = true;
         characters[1] = characterGOs[1].GetComponent<Character>();
         characterUIs[1].SetCharacter(characters[1]);
         characterGOs[1].transform.position = enemyStartPosition;

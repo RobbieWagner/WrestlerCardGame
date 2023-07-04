@@ -731,8 +731,8 @@ MonoBehaviour:
   characterPrefabs:
   - {fileID: 3876114247994068906, guid: b123ca14a3fa65f4cbe35c22517e9869, type: 3}
   - {fileID: 5406520663753922520, guid: e7d9f5340bfd03f4aab8fdd84457a695, type: 3}
-  playerStartPosition: {x: -3, y: 0, z: 0}
-  enemyStartPosition: {x: 3, y: 0, z: 0}
+  playerStartPosition: {x: -10, y: -3, z: 0}
+  enemyStartPosition: {x: 10, y: -3, z: 0}
   activeCharacter: {fileID: 0}
   targetCharacter: {fileID: 0}
   cardUI: {fileID: 1881973545}
@@ -1388,7 +1388,7 @@ Transform:
   m_GameObject: {fileID: 1941801925}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1.65, y: 1.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
